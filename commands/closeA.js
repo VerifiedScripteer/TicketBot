@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) =>{
 
-    const categoryID = "867901757832298517";
+    const categoryID = "883101906724085780";
 
     if (!args[1]) return message.channel.send("Geef een reden op.");
 

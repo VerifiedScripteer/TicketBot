@@ -6,7 +6,6 @@ const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 const ms = require('ms');
 const { EventEmitter } = require("stream");
 EventEmitter.setMaxListeners
-const noblox = require("noblox.js");
 const { group } = require("console");
 const disbut = require("discord-buttons");
 const superagent = require ("superagent");

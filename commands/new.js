@@ -57,7 +57,7 @@ module.exports.run = async (client, message, args) => {
                 menu.reply.send('Vragen over aanvragen worden niet beantwoord in een ticket. Doe `,sollistatus` en je zult zien welke applicaties beschikbaar zijn. Lees onze faq goed door.', true)
                 break;
             case "Optie 2":
-                var categoryID = "865576578948005898";
+                var categoryID = "882381925799567420";
 
                 var userName = "ticket";
                 var userDiscriminator = message.author.id;
@@ -110,7 +110,7 @@ module.exports.run = async (client, message, args) => {
                 break;
             case "Optie 3":
 
-                var categoryID = "865576578948005898";
+                var categoryID = "882381925799567420";
 
                 var userName = "ticket";
                 var userDiscriminator = message.author.id;
@@ -163,7 +163,7 @@ module.exports.run = async (client, message, args) => {
                 break;
             case "Optie 4":
 
-                var categoryID = "867901757832298517";
+                var categoryID = "883101906724085780";
 
                 var userName = "klacht";
                 var userDiscriminator = message.author.id;

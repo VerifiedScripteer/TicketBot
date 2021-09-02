@@ -3,6 +3,19 @@ const { MessageMenuOption, MessageMenu } = require("discord-buttons");
 
 module.exports.run = async (client, message, args) => {
 
+    if (!message.member.hasPermission("MUTE_MEMBERS")) { 
+        
+        var embed = new discord.MessageEmbed()
+            .setTitle("Ontbrekende machtigingen")
+            .setDescription("Je hebt niet de juiste machtigingen om dit commando uit te voeren. Je hebt hiervoor de `MUTE_MEMBERS` permission nodig en deze hebben alleen `SUPPORT TEAM` leden. Excuses voor het ongemak.")
+            .setColor("RED")
+            .setTimestamp()
+            .setFooter("ERROR 154 | Den Haag Official");
+
+        return message.channel.send(embed);
+
+    }
+
     let option1 = new MessageMenuOption()
         .setLabel("Ticket Sluiten")
         .setValue("Optie 1")
@@ -45,7 +58,7 @@ module.exports.run = async (client, message, args) => {
     function menuselection(menu) {
         switch (menu.values[0]) {
             case "Optie 1":
-                const categoryID = "865576578948005898";
+                const categoryID = "882381925799567420";
 
                 if (!message.member.hasPermission("MUTE_MEMBERS")) return message.reply("Jij kan dit niet doen");
 
@@ -66,14 +79,16 @@ module.exports.run = async (client, message, args) => {
                     var embed = new discord.MessageEmbed()
                         .setTitle("Error!")
                         .setDescription("Dit commando kan alleen worden toegepast in een ticket.")
-                        .setColor("#ff4400");
+                        .setFooter("ERROR 401")
+                        .setTimestamp()
+                        .setColor("RED");
 
                     message.author.send(embed);
                 }
                 break;
             case "Optie 2":
 
-                message.channel.updateOverwrite(message.guild.roles.cache.find(x => x.id === '867888851167084564'), {
+                message.channel.updateOverwrite(message.guild.roles.cache.find(x => x.id === '882371134916542484'), {
                     SEND_MESSAGES: false,
                     VIEW_CHANNEL: true
                 });      
@@ -85,7 +100,11 @@ module.exports.run = async (client, message, args) => {
                     SEND_MESSAGES: true,
                     VIEW_CHANNEL: true
                 });       
-                message.channel.updateOverwrite(message.guild.roles.cache.find(z => z.id === "867889970604539944"), {
+                message.channel.updateOverwrite(message.guild.roles.cache.find(z => z.id === "882734011519209562"), {
+                    SEND_MESSAGES: true,
+                    VIEW_CHANNEL: true
+                });  
+                message.channel.updateOverwrite(message.guild.roles.cache.find(z => z.id === "882376230677123142"), {
                     SEND_MESSAGES: true,
                     VIEW_CHANNEL: true
                 });            
@@ -102,7 +121,7 @@ module.exports.run = async (client, message, args) => {
                 break;
             case "Optie 3":
 
-                message.channel.updateOverwrite(message.guild.roles.cache.find(x => x.id === '867888851167084564'), {
+                message.channel.updateOverwrite(message.guild.roles.cache.find(x => x.id === '882371134916542484'), {
                     SEND_MESSAGES: true,
                     VIEW_CHANNEL: true
                 });    
