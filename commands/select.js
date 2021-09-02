@@ -62,7 +62,7 @@ module.exports.run = async (client, message, args) => {
 
                 if (!message.member.hasPermission("MUTE_MEMBERS")) return message.reply("Jij kan dit niet doen");
 
-                var ticketLogs = message.guild.channels.cache.find(ch => ch.id === "867900892400713789");
+                var ticketLogs = message.guild.channels.cache.find(ch => ch.id === "883110099810390036");
 
                 if (message.channel.parentID == categoryID) {
 
