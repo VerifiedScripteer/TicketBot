@@ -99,6 +99,10 @@ module.exports.run = async (client, message, args) => {
                 message.channel.updateOverwrite(message.guild.roles.cache.find(z => z.name === "Management"), {
                     SEND_MESSAGES: true,
                     VIEW_CHANNEL: true
+                });  
+                message.channel.updateOverwrite(message.guild.roles.cache.find(z => z.name === "Co-Creator"), {
+                    SEND_MESSAGES: true,
+                    VIEW_CHANNEL: true
                 });       
                 message.channel.updateOverwrite(message.guild.roles.cache.find(z => z.id === "882734011519209562"), {
                     SEND_MESSAGES: true,
