@@ -4,9 +4,9 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[1]) return message.channel.send("Geef een suggestie op.");
 
-    var channel = message.guild.channels.cache.find(ch => ch.id === "848829367278501888");
+    var channel = message.guild.channels.cache.find(ch => ch.id === "883112510432092180");
 
-    var staffCH = message.guild.channels.cache.find(sc => sc.id === "868692409079439360");
+    var staffCH = message.guild.channels.cache.find(sc => sc.id === "882735982787588136");
 
     var succesvolEmbed = new discord.MessageEmbed()
         .setColor("GREEN")
