@@ -8,7 +8,7 @@ const { EventEmitter } = require("stream");
 EventEmitter.setMaxListeners
 const { group } = require("console");
 const disbut = require("discord-buttons");
-const superagent = require ("superagent");
+const superagent = require("superagent");
 
 const client = new discord.Client();
 require('discord-buttons')(client);
@@ -46,6 +46,32 @@ client.on("ready", async () => {
 
     client.user.setActivity("!help", { type: "WATCHING" });
 
+    client.api.applications(client.user.id).guilds("882370435516362852").commands.post({
+        data: {
+            name: "test",
+            description: "Geeft een antwoord - Test commando"
+        }
+    });
+
+
+    client.ws.on('INTERACTION_CREATE', async interactie => {
+
+        const command = interactie.data.name.toLowerCase();
+
+        if (command === "test") {
+            client.api.interactions(interactie.id, interactie.token).callback.post({
+                data: {
+                    type: 4,
+                    data: {
+                        content: "Hoi dit is een test bericht."
+                    }
+                }
+            })
+        }
+
+    });
+
+
 
 });
 
@@ -69,6 +95,6 @@ client.on("message", async message => {
     var prefix = botConfig.prefix;
 
     if (commands) commands.run(client, message, args);
-    
+
 
 });
