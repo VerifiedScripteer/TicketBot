@@ -47,9 +47,9 @@ module.exports.run = async (client, message, args) => {
                 message.channel.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
                     var antwoord4 = antwoord.first();;
 
-                    var channel = message.guild.channels.cache.find(ch => ch.id === "884919041108631603");
+                    var channel = message.guild.channels.cache.find(ch => ch.id === "888421172562243625");
 
-                    var staffCH = message.guild.channels.cache.find(sc => sc.id === "884925461375897620");
+                    var staffCH = message.guild.channels.cache.find(sc => sc.id === "895726478824734731");
 
                     var succesvolEmbed = new discord.MessageEmbed()
                         .setColor("GREEN")
